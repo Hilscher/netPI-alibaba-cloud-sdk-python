@@ -1,6 +1,6 @@
 ## Accessing  Alibaba Cloud IoT Platform with Python sample
 
-Made for [netPI](https://www.netiot.com/netpi/), the Raspberry Pi 3 Architecture based industrial suited Open Edge Connectivity Ecosystem
+Made for [netPI](https://www.netiot.com/netpi/), the Raspberry Pi 3B Architecture based industrial suited Open Edge Connectivity Ecosystem
 
 ### Debian Stretch with Alibaba Cloud Python SDK, Python sample, SSH server and user root
 
@@ -32,9 +32,9 @@ STEP 3. Enter the following parameters under **Containers > Add Container**
 
 * **Restart policy"** : `always`
 
-STEP 4. Press the button **Actions > Start container**
+STEP 4. Press the button **Actions > Start/Deploy container**
 
-Pulling the image may take a while (5-10mins). In some cases a web browser specific timeout may be exceeded interrupting the load process. In this case repeat the **Actions > Start container** action.
+Pulling the image may take a while (5-10mins). Sometimes it takes so long that a time out is indicated. In this case repeat the **Actions > Start/Deploy container** action.
 
 #### Accessing
 
@@ -103,16 +103,15 @@ STEP 4: Call your test program with `python test.py`
 
 STEP 5: Go back to the console and click the device "MyDevice" again and then its `Topic List`. See the counters `Published Notifications` incrementing on each example program's call.
 
-#### Tags
+#### Automated build
 
-* **hilscher/netPI-alibaba-cloud-sdk-python** - non-tagged (but tested OK) latest development output of the GitHub project master branch.
+The project complies with the scripting based [Dockerfile](https://docs.docker.com/engine/reference/builder/) method to build the image output file. Using this method is a precondition for an [automated](https://docs.docker.com/docker-hub/builds/) web based build process on DockerHub platform.
 
-#### GitHub sources
+DockerHub web platform is x86 CPU based, but an ARM CPU coded output file is needed for Raspberry systems. This is why the Dockerfile includes the [balena.io](https://balena.io/blog/building-arm-containers-on-any-x86-machine-even-dockerhub/) steps.
 
-The image is built from the GitHub project [netPI-alibaba-cloud-sdk-python](https://github.com/Hilscher/netPI-alibaba-cloud-sdk-python). It complies with the [Dockerfile](https://docs.docker.com/engine/reference/builder/) method to build a Docker image [automated](https://docs.docker.com/docker-hub/builds/).
+#### License
 
-View the license information for the software in the Github project. As with all Docker images, these likely also contain other software which may be under other licenses (such as Bash, etc from the base distribution, along with any direct or indirect dependencies of the primary software being contained). As for any pre-built image usage, it is the image user's responsibility to ensure that any use of this image complies with any relevant licenses for all software contained within.
-
-Hint: Cross-building the image for an ARM architecture based CPU on [Docker Hub](https://hub.docker.com/)(x86 CPU based servers) the Dockerfile uses the method described here [resin.io](https://resin.io/blog/building-arm-containers-on-any-x86-machine-even-dockerhub/). If you want to build the image on a Raspberry Pi directly then comment out the two lines `RUN [ "cross-build-start" ]` and `RUN [ "cross-build-end" ]` in the file Dockerfile before.
+View the license information for the software in the project. As with all Docker images, these likely also contain other software which may be under other licenses (such as Bash, etc from the base distribution, along with any direct or indirect dependencies of the primary software being contained).
+As for any pre-built image usage, it is the image user's responsibility to ensure that any use of this image complies with any relevant licenses for all software contained within.
 
 [![N|Solid](http://www.hilscher.com/fileadmin/templates/doctima_2013/resources/Images/logo_hilscher.png)](http://www.hilscher.com)  Hilscher Gesellschaft fuer Systemautomation mbH  www.hilscher.com
