@@ -2,11 +2,11 @@
 
 Made for [netPI](https://www.netiot.com/netpi/), the Raspberry Pi 3B Architecture based industrial suited Open Edge Connectivity Ecosystem
 
-### Debian Stretch with Alibaba Cloud Python SDK, Python sample, SSH server and user root
+### Debian with Alibaba Cloud Python SDK, Python sample, SSH server and user root
 
 The image provided hereunder deploys a container with installed Python SDK for Alibaba Cloud(Aliyun) and self written sample applications connecting to your personal Alibaba Cloud IoT Platform after a short setup.
 
-Base of this image builds a tagged version of [debian:stretch](https://hub.docker.com/r/resin/armv7hf-debian/tags/) with enabled [SSH](https://en.wikipedia.org/wiki/Secure_Shell), created user 'root' and preinstalled Python IoT SDK from [here](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-iot). Guidance for a self written sample program find below. 
+Base of this image builds [debian](https://www.balena.io/docs/reference/base-images/base-images/) with enabled [SSH](https://en.wikipedia.org/wiki/Secure_Shell), created user 'root' and preinstalled Python IoT SDK from [here](https://github.com/aliyun/aliyun-openapi-python-sdk/tree/master/aliyun-python-sdk-iot). Guidance for a self written sample program find below. 
 
 Before using the sample you have to sign up with [Alibaba Cloud](https://myaccount.alibabacloud.com) and create an account. At the time of image preparation Alibaba's Cloud IoT Platform services are not free of charge. You pay 0.8$ for 1.000.000 Pub or Sub operations.
 
@@ -38,7 +38,7 @@ Pulling the image may take a while (5-10mins). Sometimes it takes so long that a
 
 #### Accessing
 
-The container starts the SSH server automatically. Open a terminal connection to it with an SSH client such as [putty](http://www.putty.org/) using netPI's IP address at your mapped port.
+The container starts the SSH server automatically when started. Open a terminal connection to it with an SSH client such as [putty](http://www.putty.org/) using netPI's IP address at your mapped port.
 
 Use the credentials `root` as user and `root` as password when asked and you are logged in as root user `root`.
 
